@@ -4,194 +4,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Каталог товаров</title>
-  <link rel="stylesheet" href="CSS/style.css">
+  <title>SkinShop — магазин игровых скинов</title>
+  <meta name="description" content="Главная страница магазина игровых скинов SkinShop: преимущества и популярные товары.">
+  <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
 
-<body>
-  <header>
-    <div class="site-header">
-      <a class="site-logo" href="index.html">ShopProject</a>
+<body id="top">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">SkinShop</a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="#popular">Популярные товары</a></li>
-          <li><a href="#advantages">Преимущества</a></li>
-          <li><a href="#contacts">Контакты</a></li>
+          <li><a class="site-nav__link site-nav__link--active" aria-current="page" href="index.html">Главная</a></li>
+          <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li><a class="site-nav__link" href="product.html">Товар</a></li>
+          <li><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-
   <main>
-    <!--Основное содержание страницы-->
-
     <section class="hero">
-      <h1>Учебный интернет-магазин</h1>
-      <p>
-        Это стартовая страница учебного frontend-проекта.
-        В дальнейшем на её основе будет разработан многостраничный сайт
-        интернет-магазина или каталога услуг.
-      </p>
-      <a class="button" href="#popular">Перейти к товарам</a>
+      <h1 class="hero__title">Магазин игровых скинов</h1>
+      <p>Скины для оружия, персонажей и ножей. Выберите товар в каталоге и оставьте заявку — мы передадим скин в ваш инвентарь.</p>
+      <div class="hero__actions">
+        <a class="button" href="catalog.html">Открыть каталог</a>
+        <a class="button button--secondary" href="#popular">Популярные товары</a>
+      </div>
     </section>
 
     <section class="section" id="advantages">
-      <h2>Преимущества проекта</h2>
-
-      <ul class="advantages-list">
-        <li>понятная HTML-структура;</li>
-        <li>семантические блоки страницы;</li>
-        <li>подключение внешнего CSS-файла;</li>
-        <li>подготовка к разработке многостраничного сайта.</li>
+      <h2 class="section__title">Преимущества</h2>
+      <ul class="advantages">
+        <li class="advantages__item">
+          <h3 class="advantages__title">Быстрая выдача</h3>
+          <p>Скин попадает в инвентарь в течение 15 минут после оплаты.</p>
+        </li>
+        <li class="advantages__item">
+          <h3 class="advantages__title">Понятные цены</h3>
+          <p>Цена указана в карточке товара, скрытых комиссий нет.</p>
+        </li>
+        <li class="advantages__item">
+          <h3 class="advantages__title">Поддержка</h3>
+          <p>Отвечаем на вопросы по заказам каждый день.</p>
+        </li>
       </ul>
     </section>
 
     <section class="section" id="popular">
-      <h2>Популярные товары</h2>
-
+      <h2 class="section__title">Популярные товары</h2>
+      <div class="products-grid">
       <article class="product-card">
-        <h3>Товар 1</h3>
-        <p>Краткое описание учебного товара.</p>
-        <p>Цена: 1000 руб.</p>
-        <button class="button product-card__button" type="button" data-product="Товар 1">
-          Заказать
-        </button>
+        <span class="product-card__badge product-card__badge--hit">Хит</span>
+        <div class="product-card__image">Изображение скина</div>
+        <p class="product-card__category">Скины оружия</p>
+        <h3 class="product-card__title"><a href="product.html">Огненный дракон</a></h3>
+        <p class="product-card__description">Анимированный скин для винтовки с эффектом пламени.</p>
+        <p class="product-card__price">1 490 ₽</p>
+        <div class="product-card__actions">
+          <a class="button button--secondary" href="product.html">Подробнее</a>
+          <button class="button product-card__button" type="button" data-product="Огненный дракон">Заказать</button>
+        </div>
       </article>
-
+      <article class="product-card product-card--discount">
+        <span class="product-card__badge product-card__badge--sale">-23%</span>
+        <div class="product-card__image">Изображение скина</div>
+        <p class="product-card__category">Скины оружия</p>
+        <h3 class="product-card__title"><a href="product.html">Ледяной шторм</a></h3>
+        <p class="product-card__description">Холодная цветовая схема с эффектом инея на стволе.</p>
+        <p class="product-card__price">990 ₽ <span class="product-card__old-price"><s>1 290 ₽</s></span></p>
+        <div class="product-card__actions">
+          <a class="button button--secondary" href="product.html">Подробнее</a>
+          <button class="button product-card__button" type="button" data-product="Ледяной шторм">Заказать</button>
+        </div>
+      </article>
       <article class="product-card">
-        <h3>Товар 2</h3>
-        <p>Краткое описание учебного товара.</p>
-        <p>Цена: 1500 руб.</p>
-        <button class="button product-card__button" type="button" data-product="Товар 2">
-          Заказать
-        </button>
+        <span class="product-card__badge product-card__badge--hit">Хит</span>
+        <div class="product-card__image">Изображение скина</div>
+        <p class="product-card__category">Наборы</p>
+        <h3 class="product-card__title"><a href="product.html">Набор «Стартовый»</a></h3>
+        <p class="product-card__description">Три скина разных типов по выгодной цене.</p>
+        <p class="product-card__price">2 490 ₽</p>
+        <div class="product-card__actions">
+          <a class="button button--secondary" href="product.html">Подробнее</a>
+          <button class="button product-card__button" type="button" data-product="Набор «Стартовый»">Заказать</button>
+        </div>
       </article>
-
-      <article class="product-card">
-        <h3>Товар 3</h3>
-        <p>Краткое описание учебного товара.</p>
-        <p>Цена: 2000 руб.</p>
-        <button class="button product-card__button" type="button" data-product="Товар 3">
-          Заказать
-        </button>
-      </article>
+      </div>
     </section>
 
     <aside class="aside-info">
-      <h2>Информация для студентов</h2>
-      <p>
-        На следующих практических занятиях этот проект будет расширяться:
-        появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
-        БЭМ-структура и адаптивная версия сайта.
-      </p>
+      <h2 class="aside-info__title">Информация для покупателей</h2>
+      <p>Все товары и контакты на сайте вымышленные: это учебный проект. Полный список скинов — в <a href="catalog.html">каталоге</a>.</p>
     </aside>
   </main>
 
-  <footer id="contacts">
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__inner">
+      <section>
+        <h2 class="site-footer__title">SkinShop</h2>
+        <p class="site-footer__text">Магазин игровых скинов.</p>
+        <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+      </section>
+
+      <nav aria-label="Ссылки на разделы">
+        <h2 class="site-footer__title">Разделы</h2>
+        <ul class="site-footer__list">
+          <li><a href="index.html#advantages">Преимущества</a></li>
+          <li><a href="index.html#popular">Популярные товары</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <section>
+        <h2 class="site-footer__title">Связь</h2>
+        <p class="site-footer__text">E-mail: <a href="mailto:support@skinshop.example">support@skinshop.example</a></p>
+        <p class="site-footer__text">Телефон: +7 (900) 000-00-00</p>
+      </section>
+    </div>
+    <p class="site-footer__copy">&copy; 2026 SkinShop. Учебный проект.</p>
   </footer>
 
-<dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-  <h2 id="order-dialog-title">Оформление заявки</h2>
+  <a class="button top-button" href="#top">↑ Наверх</a>
 
-  <form class="order-form" id="order-form" action="#" method="post" novalidate>
-    <input id="selected-product" name="selected-product" type="hidden">
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <h2 class="order-dialog__title" id="order-dialog-title">Быстрая заявка</h2>
+    <p>Выбранный товар: <strong id="order-dialog-product">не выбран</strong></p>
 
-    <div class="form-field">
-      <label for="order-name">Имя</label>
-      <input
-        id="order-name"
-        name="name"
-        type="text"
-        placeholder="Введите ваше имя"
-        minlength="2"
-        autocomplete="given-name"
-        required
-      >
-    </div>
+    <form class="order-form" id="order-form" action="#" method="post" novalidate data-success="success-message">
+      <input id="selected-product" name="selected-product" type="hidden">
+      <div class="order-form__field">
+        <label class="order-form__label" for="modal-name">Имя</label>
+        <input class="order-form__input" id="modal-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" required>
+      </div>
+      <div class="order-form__field">
+        <label class="order-form__label" for="modal-email">E-mail</label>
+        <input class="order-form__input" id="modal-email" name="email" type="email" placeholder="example@mail.ru" required>
+      </div>
+      <div class="order-form__field">
+        <label class="order-form__label" for="modal-phone">Телефон</label>
+        <input class="order-form__input" id="modal-phone" name="phone" type="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+        <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
+      </div>
+      <div class="order-form__field">
+        <label class="order-form__label" for="modal-topic">Тема заявки</label>
+        <select class="order-form__input" id="modal-topic" name="topic" required>
+          <option value="">Выберите тему</option>
+          <option value="order">Покупка скина</option>
+          <option value="question">Вопрос по товару</option>
+          <option value="payment">Оплата и получение</option>
+        </select>
+      </div>
+      <div class="order-form__field">
+        <label class="order-form__label" for="modal-comment">Комментарий</label>
+        <textarea class="order-form__input" id="modal-comment" name="comment" rows="4" placeholder="Напишите, что нужно уточнить"></textarea>
+      </div>
+      <div class="order-form__field order-form__field--checkbox">
+        <input class="order-form__checkbox" id="modal-agreement" name="agreement" type="checkbox" required>
+        <label class="order-form__label" for="modal-agreement">Я согласен на обработку персональных данных</label>
+      </div>
 
-    <div class="form-field">
-      <label for="order-email">E-mail</label>
-      <input
-        id="order-email"
-        name="email"
-        type="email"
-        placeholder="example@mail.ru"
-        autocomplete="email"
-        required
-      >
-    </div>
+      <div class="order-form__actions">
+        <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
+        <button class="button" type="submit">Отправить заявку</button>
+      </div>
+    </form>
+  </dialog>
 
-    <div class="form-field">
-      <label for="order-phone">Телефон</label>
-      <input
-        id="order-phone"
-        name="phone"
-        type="tel"
-        inputmode="tel"
-        placeholder="+7 (900) 000-00-00"
-        pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-        required
-      >
-      <small>Формат: +7 (900) 000-00-00</small>
-    </div>
-
-    <div class="form-field">
-      <label for="order-date">Дата связи</label>
-      <input
-        id="order-date"
-        name="date"
-        type="date"
-      >
-    </div>
-
-    <div class="form-field">
-      <label for="order-topic">Тема заявки</label>
-      <select id="order-topic" name="topic" required>
-        <option value="">Выберите тему</option>
-        <option value="product">Заказ товара</option>
-        <option value="consultation">Консультация</option>
-        <option value="delivery">Доставка</option>
-      </select>
-    </div>
-
-    <div class="form-field">
-      <label for="order-comment">Комментарий</label>
-      <textarea
-        id="order-comment"
-        name="comment"
-        rows="4"
-        placeholder="Укажите дополнительную информацию"
-      ></textarea>
-    </div>
-
-    <div class="form-field form-field--checkbox">
-      <label>
-        <input
-          id="order-agreement"
-          name="agreement"
-          type="checkbox"
-          required
-        >
-        Я согласен на обработку данных
-      </label>
-    </div>
-
-    <div class="form-actions">
-      <button type="button" id="close-order-dialog">Закрыть</button>
-      <button type="submit">Отправить заявку</button>
-    </div>
-  </form>
-</dialog>
-
-<p class="success-message" id="success-message" hidden>
-  Форма успешно отправлена!
-</p>
-
+  <p class="success-message" id="success-message" hidden>Форма успешно отправлена!</p>
 </body>
+
 </html>
