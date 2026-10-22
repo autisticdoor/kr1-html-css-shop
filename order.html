@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Оформление заявки — SkinShop</title>
-  <meta name="description" content="Форма заявки на покупку игрового скина в магазине SkinShop.">
+  <meta name="description" content="Форма заявки на покупку скина для CS2 в магазине SkinShop.">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
@@ -67,13 +67,20 @@
         <label class="order-form__label" for="order-product">Выбранный товар</label>
         <select class="order-form__select" id="order-product" name="product">
           <option value="">Не выбран</option>
-          <option value="Огненный дракон">Огненный дракон</option>
-          <option value="Ледяной шторм">Ледяной шторм</option>
-          <option value="Ночной охотник">Ночной охотник</option>
-          <option value="Космический десант">Космический десант</option>
-          <option value="Набор «Стартовый»">Набор «Стартовый»</option>
-          <option value="Золотой клинок">Золотой клинок</option>
+          <option value="AK-47 | Redline" data-price="1 490 ₽">AK-47 | Redline</option>
+          <option value="AWP | Asiimov" data-price="1 890 ₽">AWP | Asiimov</option>
+          <option value="M4A4 | Howl" data-price="14 990 ₽">M4A4 | Howl</option>
+          <option value="USP-S | Kill Confirmed" data-price="1 990 ₽">USP-S | Kill Confirmed</option>
+          <option value="Desert Eagle | Blaze" data-price="3 490 ₽">Desert Eagle | Blaze</option>
+          <option value="Glock-18 | Fade" data-price="4 990 ₽">Glock-18 | Fade</option>
+          <option value="★ Karambit | Doppler" data-price="24 990 ₽">★ Karambit | Doppler</option>
+          <option value="AWP | Dragon Lore" data-price="39 990 ₽">AWP | Dragon Lore</option>
         </select>
+      </div>
+            <div class="order-form__field">
+        <label class="order-form__label" for="order-trade-url">Ссылка для обмена в Steam (необязательно)</label>
+        <input class="order-form__input" id="order-trade-url" name="trade-url" type="url" placeholder="https://steamcommunity.com/tradeoffer/new/?partner=…&amp;token=…" pattern="https://steamcommunity\.com/tradeoffer/new/\?partner=\d+&amp;token=[\w\-]+" data-error="Ссылка должна выглядеть так: https://steamcommunity.com/tradeoffer/new/?partner=123&amp;token=abc">
+        <small class="order-form__hint">Нужна, чтобы отправить скин обменом. Если оставить поле пустым, мы уточним её при связи.</small>
       </div>
       <div class="order-form__field">
         <label class="order-form__label" for="order-comment">Комментарий</label>
@@ -89,11 +96,13 @@
           </div>
         </form>
 
-        <p class="success-message" id="page-success" hidden>Форма успешно отправлена!</p>
+        <p class="success-message" id="page-success" role="status" hidden>Заявка отправлена!</p>
       </section>
 
       <aside class="aside-info">
-        <h2 class="aside-info__title">Что дальше</h2>
+        <h2 class="aside-info__title">Ваш заказ</h2>
+        <p>Скин: <strong id="order-summary-product">не выбран</strong></p>
+        <p>Цена: <strong id="order-summary-price">—</strong></p>
         <p>После отправки заявки менеджер свяжется с вами по e-mail или телефону и уточнит детали выдачи скина.</p>
       </aside>
     </div>

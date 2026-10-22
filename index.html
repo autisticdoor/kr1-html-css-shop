@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkinShop — магазин игровых скинов</title>
-  <meta name="description" content="Главная страница магазина игровых скинов SkinShop: преимущества и популярные товары.">
+  <title>SkinShop — магазин скинов для CS2</title>
+  <meta name="description" content="Главная страница магазина скинов для Counter-Strike 2 SkinShop: преимущества и популярные скины.">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
@@ -32,12 +32,22 @@
 
   <main>
     <section class="hero">
-      <h1 class="hero__title">Магазин игровых скинов</h1>
-      <p class="hero__text">Скины для оружия, персонажей и ножей. Выберите товар в каталоге и оставьте заявку — мы передадим скин в ваш инвентарь.</p>
-      <div class="hero__actions">
-        <a class="button button--primary" href="catalog.html">Открыть каталог</a>
-        <a class="button button--secondary" href="#popular">Популярные товары</a>
+      <div class="hero__content">
+        <h1 class="hero__title">Магазин скинов для CS2</h1>
+        <p class="hero__text">Винтовки, пистолеты и ножи из Counter-Strike 2. Выберите скин в каталоге и оставьте заявку — мы передадим его в ваш инвентарь Steam.</p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="catalog.html">Открыть каталог</a>
+          <a class="button button--secondary" href="#popular">Популярные товары</a>
+        </div>
       </div>
+
+      <aside class="hero__spotlight" aria-label="Скин дня">
+        <p class="hero__spotlight-label">Скин дня</p>
+        <p class="hero__spotlight-name">AK-47 | Redline</p>
+        <p class="hero__spotlight-meta">Засекреченное · Phoenix Collection</p>
+        <p class="hero__spotlight-price">1 490 ₽</p>
+        <a class="button button--primary" href="product.html">Смотреть скин</a>
+      </aside>
     </section>
 
     <section class="section" id="advantages">
@@ -45,7 +55,7 @@
       <ul class="advantages">
         <li class="advantages__item">
           <h3 class="advantages__title">Быстрая выдача</h3>
-          <p>Скин попадает в инвентарь в течение 15 минут после оплаты.</p>
+          <p>Скин попадает в инвентарь Steam в течение 15 минут после оплаты.</p>
         </li>
         <li class="advantages__item">
           <h3 class="advantages__title">Понятные цены</h3>
@@ -61,48 +71,52 @@
     <section class="section" id="popular">
       <h2 class="section__title">Популярные товары</h2>
       <div class="products-grid">
-      <article class="product-card product-card--featured">
+      <article class="product-card product-card--featured product-card--classified">
         <span class="product-card__badge product-card__badge--hit">Хит</span>
         <div class="product-card__image">Изображение скина</div>
-        <p class="product-card__category">Скины оружия</p>
-        <h3 class="product-card__title"><a href="product.html">Огненный дракон</a></h3>
-        <p class="product-card__description">Анимированный скин для винтовки с эффектом пламени.</p>
+        <p class="product-card__category">Винтовка</p>
+        <h3 class="product-card__title"><a href="product.html">AK-47 | Redline</a></h3>
+        <p class="product-card__meta">Засекреченное · износ 0.10–0.70</p>
+        <p class="product-card__description">Красные полосы на чёрном корпусе — один из самых узнаваемых скинов для AK-47.</p>
         <p class="product-card__price">1 490 ₽</p>
         <div class="product-card__actions">
           <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button button--primary product-card__button" type="button" data-product="Огненный дракон">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="AK-47 | Redline">Заказать</button>
         </div>
       </article>
-      <article class="product-card product-card--discount">
-        <span class="product-card__badge product-card__badge--sale">-23%</span>
+      <article class="product-card product-card--discount product-card--covert">
+        <span class="product-card__badge product-card__badge--sale">-21%</span>
         <div class="product-card__image">Изображение скина</div>
-        <p class="product-card__category">Скины оружия</p>
-        <h3 class="product-card__title"><a href="product.html">Ледяной шторм</a></h3>
-        <p class="product-card__description">Холодная цветовая схема с эффектом инея на стволе.</p>
-        <p class="product-card__price">990 ₽ <span class="product-card__old-price"><s>1 290 ₽</s></span></p>
+        <p class="product-card__category">Снайперская винтовка</p>
+        <h3 class="product-card__title"><a href="product.html">AWP | Asiimov</a></h3>
+        <p class="product-card__meta">Тайное · износ 0.18–1.00</p>
+        <p class="product-card__description">Футуристичный бело-оранжевый дизайн с чёрными вставками.</p>
+        <p class="product-card__price">1 890 ₽ <span class="product-card__old-price"><s>2 390 ₽</s></span></p>
         <div class="product-card__actions">
           <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button button--primary product-card__button" type="button" data-product="Ледяной шторм">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="AWP | Asiimov">Заказать</button>
         </div>
       </article>
-      <article class="product-card">
+      <article class="product-card product-card--contraband">
         <span class="product-card__badge product-card__badge--hit">Хит</span>
         <div class="product-card__image">Изображение скина</div>
-        <p class="product-card__category">Наборы</p>
-        <h3 class="product-card__title"><a href="product.html">Набор «Стартовый»</a></h3>
-        <p class="product-card__description">Три скина разных типов по выгодной цене.</p>
-        <p class="product-card__price">2 490 ₽</p>
+        <p class="product-card__category">Винтовка</p>
+        <h3 class="product-card__title"><a href="product.html">M4A4 | Howl</a></h3>
+        <p class="product-card__meta">Контрабанда · износ 0.00–0.40</p>
+        <p class="product-card__description">Контрабандный скин с пылающей волчьей головой: убран из выпадения.</p>
+        <p class="product-card__price">14 990 ₽</p>
         <div class="product-card__actions">
           <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button button--primary product-card__button" type="button" data-product="Набор «Стартовый»">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="M4A4 | Howl">Заказать</button>
         </div>
       </article>
+
       </div>
     </section>
 
     <aside class="aside-info">
       <h2 class="aside-info__title">Информация для покупателей</h2>
-      <p>Все товары и контакты на сайте вымышленные: это учебный проект. Полный список скинов — в <a href="catalog.html">каталоге</a>.</p>
+      <p>Это учебный проект: цены и контакты условные, магазин не связан с Valve. Названия скинов и их характеристики взяты из открытых справочников по CS2. Полный список — в <a href="catalog.html">каталоге</a>.</p>
     </aside>
   </main>
 
@@ -178,7 +192,7 @@
     </form>
   </dialog>
 
-  <p class="success-message" id="success-message" hidden>Форма успешно отправлена!</p>
+  <p class="success-message" id="success-message" role="status" hidden>Заявка отправлена!</p>
 </body>
 
 </html>

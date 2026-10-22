@@ -3,18 +3,24 @@
    =============================== */
 
 :root {
+  /* Тёмная тема: браузер рисует системные элементы (поля, прокрутку) тёмными */
+  color-scheme: dark;
+
   /* Цвета */
-  --color-bg: #ffffff;
-  --color-text: #222222;
-  --color-muted: #666666;
-  --color-primary: #0057b8;
-  --color-primary-dark: #003f86;
-  --color-border: #dddddd;
-  --color-surface: #f7f7f7;
-  --color-surface-accent: #eef5ff;
-  --color-danger: #b00020;
-  --color-success: #168a2f;
-  --color-success-bg: #eefaf0;
+  --color-bg: #0f1117;
+  --color-text: #e6e8ee;
+  --color-muted: #9aa3b5;
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-link: #7db3ff;
+  --color-link-hover: #a9ccff;
+  --color-focus: #7db3ff;
+  --color-border: #2b3040;
+  --color-surface: #171a22;
+  --color-surface-accent: #1f2535;
+  --color-danger: #ff7a8a;
+  --color-success: #4ade80;
+  --color-success-bg: #14281c;
   --color-white: #ffffff;
 
   /* Цвета бейджей */
@@ -22,7 +28,13 @@
   --color-badge-new: #168a2f;
   --color-badge-sale: #d97706;
 
-  /* Отступы */
+  /* Цвета качества скинов CS2 */
+  --color-rarity-restricted: #8847ff;
+  --color-rarity-classified: #d32ce6;
+  --color-rarity-covert: #eb4b4b;
+  --color-rarity-contraband: #e4ae39;
+
+/* Отступы */
   --space-xs: 4px;
   --space-sm: 8px;
   --space-md: 16px;
@@ -41,6 +53,7 @@
   --z-header: 100;
   --z-badge: 1;
   --z-top-button: 200;
+  --z-toast: 300;
 }
 
 /* ===============================
@@ -82,15 +95,15 @@ h3 {
    =============================== */
 
 a {
-  color: var(--color-primary);
+  color: var(--color-link);
 }
 
 a:hover {
-  color: var(--color-primary-dark);
+  color: var(--color-link-hover);
 }
 
 a:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-focus);
   outline-offset: 3px;
 }
 
@@ -106,7 +119,7 @@ a:focus-visible {
 }
 
 .button:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-focus);
   outline-offset: 3px;
 }
 
@@ -121,8 +134,8 @@ a:focus-visible {
 }
 
 .button--secondary {
-  color: var(--color-primary);
-  background-color: var(--color-white);
+  color: var(--color-link);
+  background-color: transparent;
 }
 
 .button--secondary:hover {
@@ -181,7 +194,7 @@ button:disabled,
 .site-nav__link {
   display: inline-block;
   padding: var(--space-sm) 10px;
-  color: var(--color-primary);
+  color: var(--color-link);
   text-decoration: none;
   border-radius: var(--radius-sm);
 }
@@ -202,7 +215,7 @@ button:disabled,
 
 /* Подсветка раздела, на который перешли по якорной ссылке */
 :target {
-  outline: 2px dashed var(--color-primary);
+  outline: 2px dashed var(--color-focus);
   outline-offset: 4px;
 }
 
@@ -214,7 +227,7 @@ button:disabled,
 }
 
 .breadcrumbs__link {
-  color: var(--color-primary);
+  color: var(--color-link);
 }
 
 /* Разделитель после каждой ссылки (inline-block, чтобы он не подчёркивался как ссылка) */
@@ -237,10 +250,16 @@ button:disabled,
   margin-top: 0;
 }
 
+/* Grid: первый экран в две колонки — текст и карточка «Скин дня» */
 .hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
   margin-bottom: var(--space-xl);
-  padding: var(--space-xl) var(--space-lg);
-  background-color: var(--color-surface-accent);
+  padding: var(--space-xl);
+  background: linear-gradient(135deg, var(--color-surface-accent), var(--color-bg));
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 }
 
@@ -252,6 +271,38 @@ button:disabled,
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-md);
+}
+
+.hero__spotlight {
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-rarity-classified);
+  border-radius: var(--radius-md);
+}
+
+.hero__spotlight-label {
+  margin: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.hero__spotlight-name {
+  margin: var(--space-xs) 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.hero__spotlight-meta {
+  margin: 0 0 var(--space-md);
+  color: var(--color-muted);
+}
+
+.hero__spotlight-price {
+  margin: 0 0 var(--space-md);
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .aside-info {
@@ -316,6 +367,7 @@ button:disabled,
 
 .product-card:hover {
   border-color: var(--color-primary);
+  box-shadow: 0 0 16px rgba(37, 99, 235, 0.35);
 }
 
 .product-card--featured {
@@ -324,6 +376,23 @@ button:disabled,
 
 .product-card--discount {
   border-color: var(--color-badge-sale);
+}
+
+/* Цвет верхней рамки — качество скина в CS2 */
+.product-card--restricted {
+  border-top: 3px solid var(--color-rarity-restricted);
+}
+
+.product-card--classified {
+  border-top: 3px solid var(--color-rarity-classified);
+}
+
+.product-card--covert {
+  border-top: 3px solid var(--color-rarity-covert);
+}
+
+.product-card--contraband {
+  border-top: 3px solid var(--color-rarity-contraband);
 }
 
 /* Заглушка вместо изображения товара */
@@ -336,6 +405,12 @@ button:disabled,
   color: var(--color-muted);
   background-color: var(--color-surface-accent);
   border-radius: var(--radius-sm);
+}
+
+.product-card__meta {
+  margin: 0 0 var(--space-sm);
+  font-size: 13px;
+  color: var(--color-muted);
 }
 
 .product-card__category {
@@ -369,6 +444,7 @@ button:disabled,
 /* Группа кнопок: Flexbox */
 .product-card__actions {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-sm);
   margin-top: auto;
 }
@@ -460,6 +536,8 @@ button:disabled,
   width: 100%;
   padding: 8px 10px;
   margin-bottom: var(--space-sm);
+  color: var(--color-text);
+  background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   font: inherit;
@@ -470,7 +548,7 @@ button:disabled,
 }
 
 .filters-form__input:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-focus);
   outline-offset: 3px;
 }
 
@@ -478,15 +556,50 @@ button:disabled,
    8. Страница товара
    =============================== */
 
-.product {
+/* Grid: основной контент + липкая панель покупки */
+.product-page {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 320px;
   gap: var(--space-lg);
+  align-items: start;
   margin-bottom: var(--space-xl);
+}
+
+/* position: sticky — панель покупки остаётся на экране при прокрутке */
+.buy-panel {
+  position: sticky;
+  top: 88px;
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-rarity-classified);
+  border-radius: var(--radius-md);
+}
+
+.buy-panel__title {
+  margin-top: 0;
+}
+
+.buy-panel__price {
+  margin: 0 0 var(--space-md);
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.buy-panel__list {
+  margin: 0 0 var(--space-md);
+  padding-left: var(--space-lg);
+  color: var(--color-muted);
+}
+
+.buy-panel__button {
+  display: block;
+  text-align: center;
 }
 
 .product__image {
   display: flex;
+  margin-bottom: var(--space-md);
   align-items: center;
   justify-content: center;
   min-height: 260px;
@@ -559,6 +672,8 @@ button:disabled,
   width: 100%;
   padding: 10px 12px;
   font: inherit;
+  color: var(--color-text);
+  background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
 }
@@ -573,7 +688,7 @@ button:disabled,
 .order-form__select:focus-visible,
 .order-form__textarea:focus-visible,
 .order-form__checkbox:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-focus);
   outline-offset: 3px;
 }
 
@@ -585,8 +700,17 @@ button:disabled,
 
 .order-form__field--checkbox {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: var(--space-sm);
+}
+
+/* Сообщение об ошибке под полем (создаётся в main.js) */
+.order-form__error {
+  flex-basis: 100%;
+  margin: var(--space-xs) 0 0;
+  font-size: 14px;
+  color: var(--color-danger);
 }
 
 .order-form__label--inline {
@@ -603,23 +727,33 @@ button:disabled,
   border-color: var(--color-danger);
 }
 
+/* position: fixed — уведомление об успешной отправке в углу экрана */
 .success-message {
-  margin: var(--space-lg) 0;
+  position: fixed;
+  left: var(--space-lg);
+  bottom: var(--space-lg);
+  z-index: var(--z-toast);
+  max-width: 360px;
+  margin: 0;
   padding: var(--space-md);
   background-color: var(--color-success-bg);
   border-left: 4px solid var(--color-success);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
 /* Модальное окно <dialog> */
 .order-dialog {
   width: min(100% - 32px, 560px);
   padding: var(--space-lg);
-  border: none;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 }
 
 .order-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .order-dialog__title {
@@ -685,11 +819,13 @@ button:disabled,
   .products-grid--catalog,
   .catalog-layout,
   .page-layout,
-  .product {
-    grid-template-columns: 1fr;
+  .product-page,
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .catalog-filters {
+  .catalog-filters,
+  .buy-panel {
     position: static;
   }
 }
