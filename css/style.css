@@ -51,6 +51,12 @@
   box-sizing: border-box;
 }
 
+/* Плавная прокрутка к якорям; отступ, чтобы заголовок не скрывался под липкой шапкой */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -183,6 +189,32 @@ button:disabled,
 /* ===============================
    5. Общие блоки страницы
    =============================== */
+
+/* Подсветка раздела, на который перешли по якорной ссылке */
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+  margin: 0 0 var(--space-md);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.breadcrumbs a {
+  color: var(--color-primary);
+}
+
+/* Разделитель перед каждым элементом, кроме первого (inline-block, чтобы он не подчёркивался как ссылка) */
+.breadcrumbs a + a::before,
+.breadcrumbs span::before {
+  content: " / ";
+  display: inline-block;
+  white-space: pre;
+  color: var(--color-muted);
+}
 
 .section {
   margin-bottom: var(--space-xl);
