@@ -161,29 +161,34 @@ button:disabled,
   text-decoration: none;
 }
 
+/* Flexbox: меню выстраивается в строку, пункты выровнены и разделены gap */
 .site-nav__list {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-md);
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xs);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .site-nav__link {
-  padding: var(--space-xs) 0;
+  display: inline-block;
+  padding: var(--space-sm) 10px;
   color: var(--color-primary);
   text-decoration: none;
-  border-bottom: 2px solid transparent;
+  border-radius: var(--radius-sm);
 }
 
 .site-nav__link:hover {
-  border-bottom-color: var(--color-primary);
+  color: var(--color-white);
+  background-color: var(--color-primary);
 }
 
 .site-nav__link--active {
   font-weight: bold;
-  border-bottom-color: var(--color-primary);
+  background-color: var(--color-surface-accent);
 }
 
 /* ===============================
@@ -353,6 +358,7 @@ button:disabled,
 .product-card__actions {
   display: flex;
   gap: var(--space-sm);
+  margin-top: auto;
 }
 
 /* position: absolute — бейдж в углу карточки */
@@ -383,19 +389,22 @@ button:disabled,
    7. Каталог и фильтры (Grid, sticky)
    =============================== */
 
-.catalog {
+/* Grid: страница каталога по схеме «фильтры + товары» (именованные области) */
+.catalog-layout {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 260px 1fr;
+  grid-template-areas: "filters products";
   gap: var(--space-lg);
   align-items: start;
 }
 
-.catalog .products-grid {
+.catalog-layout .products-grid {
   grid-template-columns: repeat(2, 1fr);
 }
 
 /* position: sticky — блок фильтров «прилипает» при прокрутке */
-.filters {
+.catalog-filters {
+  grid-area: filters;
   position: sticky;
   top: 88px;
   padding: var(--space-md);
@@ -404,24 +413,52 @@ button:disabled,
   border-radius: var(--radius-md);
 }
 
-.filters__title {
+.catalog-filters__title {
   margin-top: 0;
 }
 
-.filters__group {
-  margin: 0 0 var(--space-md);
-  padding: 0;
-  border: none;
+.catalog-products {
+  grid-area: products;
 }
 
-.filters__legend {
-  padding: 0;
-  margin-bottom: var(--space-sm);
+/* Форма фильтров: Grid с промежутками между группами полей */
+.filters-form {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.filters-form fieldset {
+  margin: 0;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.filters-form legend {
   font-weight: bold;
 }
 
-.filters__option {
-  margin-bottom: var(--space-xs);
+.filters-form label {
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.filters-form input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font: inherit;
+}
+
+.filters-form input[type="number"]:hover {
+  border-color: var(--color-primary);
+}
+
+.filters-form input:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
 }
 
 /* ===============================
@@ -625,14 +662,14 @@ button:disabled,
 @media (max-width: 800px) {
   .advantages,
   .products-grid,
-  .catalog .products-grid,
-  .catalog,
+  .catalog-layout .products-grid,
+  .catalog-layout,
   .layout,
   .product {
     grid-template-columns: 1fr;
   }
 
-  .filters {
+  .catalog-filters {
     position: static;
   }
 }

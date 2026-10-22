@@ -38,27 +38,50 @@
 
     <h1 class="section__title">Каталог скинов</h1>
 
-    <div class="catalog">
-      <aside class="filters" aria-labelledby="filters-title">
-        <h2 class="filters__title" id="filters-title">Фильтры</h2>
-        <form action="#" method="get">
-          <fieldset class="filters__group">
-            <legend class="filters__legend">Категория</legend>
-            <div class="filters__option"><input id="filter-weapons" type="checkbox" name="category" value="weapons" checked> <label for="filter-weapons">Скины оружия</label></div>
-            <div class="filters__option"><input id="filter-characters" type="checkbox" name="category" value="characters" checked> <label for="filter-characters">Скины персонажей</label></div>
-            <div class="filters__option"><input id="filter-knives" type="checkbox" name="category" value="knives"> <label for="filter-knives">Скины ножей</label></div>
-            <div class="filters__option"><input id="filter-sets" type="checkbox" name="category" value="sets"> <label for="filter-sets">Наборы</label></div>
+    <div class="catalog-layout">
+      <aside class="catalog-filters" aria-labelledby="filters-title">
+        <h2 class="catalog-filters__title" id="filters-title">Фильтры</h2>
+
+        <form class="filters-form" action="#" method="get">
+          <fieldset>
+            <legend>Категория</legend>
+
+            <label for="filter-weapons">
+              <input id="filter-weapons" type="checkbox" name="category" value="weapons" checked>
+              Скины оружия
+            </label>
+
+            <label for="filter-characters">
+              <input id="filter-characters" type="checkbox" name="category" value="characters" checked>
+              Скины персонажей
+            </label>
+
+            <label for="filter-knives">
+              <input id="filter-knives" type="checkbox" name="category" value="knives">
+              Скины ножей
+            </label>
+
+            <label for="filter-sets">
+              <input id="filter-sets" type="checkbox" name="category" value="sets">
+              Наборы
+            </label>
           </fieldset>
-          <fieldset class="filters__group">
-            <legend class="filters__legend">Цена</legend>
-            <div class="filters__option"><input id="filter-price-any" type="radio" name="price" value="any" checked> <label for="filter-price-any">Любая</label></div>
-            <div class="filters__option"><input id="filter-price-2000" type="radio" name="price" value="2000"> <label for="filter-price-2000">до 2 000 ₽</label></div>
+
+          <fieldset>
+            <legend>Цена, ₽</legend>
+
+            <label for="price-from">От</label>
+            <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
+
+            <label for="price-to">До</label>
+            <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
           </fieldset>
+
           <button class="button" type="submit" disabled>Применить</button>
         </form>
       </aside>
 
-      <section aria-label="Список товаров">
+      <section class="catalog-products" aria-label="Список товаров">
         <div class="products-grid">
       <article class="product-card">
         <span class="product-card__badge product-card__badge--hit">Хит</span>
