@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Каталог — SkinShop</title>
-  <meta name="description" content="Каталог скинов SkinShop: скины оружия, персонажей, ножей и наборы.">
+  <meta name="description" content="Каталог скинов SkinShop для CS2: винтовки, снайперские винтовки, пистолеты и ножи.">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
@@ -36,7 +36,7 @@
       <span class="breadcrumbs__current">Каталог</span>
     </nav>
 
-    <h1 class="section__title">Каталог скинов</h1>
+    <h1 class="section__title">Каталог скинов CS2</h1>
 
     <div class="catalog-layout">
       <aside class="catalog-filters" aria-labelledby="filters-title">
@@ -46,24 +46,48 @@
           <fieldset class="filters-form__group">
             <legend class="filters-form__legend">Категория</legend>
 
-            <label class="filters-form__label" for="filter-weapons">
-              <input id="filter-weapons" type="checkbox" name="category" value="weapons" checked>
-              Скины оружия
+            <label class="filters-form__label" for="filter-rifles">
+              <input id="filter-rifles" type="checkbox" name="category" value="rifles" checked>
+              Винтовки
             </label>
 
-            <label class="filters-form__label" for="filter-characters">
-              <input id="filter-characters" type="checkbox" name="category" value="characters" checked>
-              Скины персонажей
+            <label class="filters-form__label" for="filter-snipers">
+              <input id="filter-snipers" type="checkbox" name="category" value="snipers" checked>
+              Снайперские винтовки
+            </label>
+
+            <label class="filters-form__label" for="filter-pistols">
+              <input id="filter-pistols" type="checkbox" name="category" value="pistols" checked>
+              Пистолеты
             </label>
 
             <label class="filters-form__label" for="filter-knives">
               <input id="filter-knives" type="checkbox" name="category" value="knives">
-              Скины ножей
+              Ножи
+            </label>
+          </fieldset>
+
+          <fieldset class="filters-form__group">
+            <legend class="filters-form__legend">Качество</legend>
+
+            <label class="filters-form__label" for="filter-contraband">
+              <input id="filter-contraband" type="checkbox" name="rarity" value="contraband">
+              Контрабанда
             </label>
 
-            <label class="filters-form__label" for="filter-sets">
-              <input id="filter-sets" type="checkbox" name="category" value="sets">
-              Наборы
+            <label class="filters-form__label" for="filter-covert">
+              <input id="filter-covert" type="checkbox" name="rarity" value="covert" checked>
+              Тайное
+            </label>
+
+            <label class="filters-form__label" for="filter-classified">
+              <input id="filter-classified" type="checkbox" name="rarity" value="classified" checked>
+              Засекреченное
+            </label>
+
+            <label class="filters-form__label" for="filter-restricted">
+              <input id="filter-restricted" type="checkbox" name="rarity" value="restricted">
+              Запрещённое
             </label>
           </fieldset>
 
@@ -74,7 +98,7 @@
             <input class="filters-form__input" id="price-from" name="price-from" type="number" min="0" placeholder="0">
 
             <label class="filters-form__label" for="price-to">До</label>
-            <input class="filters-form__input" id="price-to" name="price-to" type="number" min="0" placeholder="5000">
+            <input class="filters-form__input" id="price-to" name="price-to" type="number" min="0" placeholder="50000">
           </fieldset>
 
           <button class="button button--primary" type="submit" disabled>Применить</button>
@@ -83,76 +107,107 @@
 
       <section class="catalog-products" aria-label="Список товаров">
         <div class="products-grid products-grid--catalog">
-      <article class="product-card product-card--featured">
+      <article class="product-card product-card--featured product-card--classified">
         <span class="product-card__badge product-card__badge--hit">Хит</span>
         <div class="product-card__image">Изображение скина</div>
-        <p class="product-card__category">Скины оружия</p>
-        <h3 class="product-card__title"><a href="product.html">Огненный дракон</a></h3>
-        <p class="product-card__description">Анимированный скин для винтовки с эффектом пламени.</p>
+        <p class="product-card__category">Винтовка</p>
+        <h3 class="product-card__title"><a href="product.html">AK-47 | Redline</a></h3>
+        <p class="product-card__meta">Засекреченное · износ 0.10–0.70</p>
+        <p class="product-card__description">Красные полосы на чёрном корпусе — один из самых узнаваемых скинов для AK-47.</p>
         <p class="product-card__price">1 490 ₽</p>
         <div class="product-card__actions">
           <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button button--primary product-card__button" type="button" data-product="Огненный дракон">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="AK-47 | Redline">Заказать</button>
         </div>
       </article>
-      <article class="product-card product-card--discount">
-        <span class="product-card__badge product-card__badge--sale">-23%</span>
+      <article class="product-card product-card--discount product-card--covert">
+        <span class="product-card__badge product-card__badge--sale">-21%</span>
         <div class="product-card__image">Изображение скина</div>
-        <p class="product-card__category">Скины оружия</p>
-        <h3 class="product-card__title"><a href="product.html">Ледяной шторм</a></h3>
-        <p class="product-card__description">Холодная цветовая схема с эффектом инея на стволе.</p>
-        <p class="product-card__price">990 ₽ <span class="product-card__old-price"><s>1 290 ₽</s></span></p>
+        <p class="product-card__category">Снайперская винтовка</p>
+        <h3 class="product-card__title"><a href="product.html">AWP | Asiimov</a></h3>
+        <p class="product-card__meta">Тайное · износ 0.18–1.00</p>
+        <p class="product-card__description">Футуристичный бело-оранжевый дизайн с чёрными вставками.</p>
+        <p class="product-card__price">1 890 ₽ <span class="product-card__old-price"><s>2 390 ₽</s></span></p>
         <div class="product-card__actions">
           <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button button--primary product-card__button" type="button" data-product="Ледяной шторм">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="AWP | Asiimov">Заказать</button>
         </div>
       </article>
-      <article class="product-card">
-        <span class="product-card__badge product-card__badge--new">Новинка</span>
-        <div class="product-card__image">Изображение скина</div>
-        <p class="product-card__category">Скины персонажей</p>
-        <h3 class="product-card__title"><a href="product.html">Ночной охотник</a></h3>
-        <p class="product-card__description">Тёмный костюм с капюшоном и светящимися элементами.</p>
-        <p class="product-card__price">2 190 ₽</p>
-        <div class="product-card__actions">
-          <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button button--primary product-card__button" type="button" data-product="Ночной охотник">Заказать</button>
-        </div>
-      </article>
-      <article class="product-card">
-        <div class="product-card__image">Изображение скина</div>
-        <p class="product-card__category">Скины персонажей</p>
-        <h3 class="product-card__title"><a href="product.html">Космический десант</a></h3>
-        <p class="product-card__description">Скафандр с металлическим покрытием и нашивками.</p>
-        <p class="product-card__price">1 790 ₽</p>
-        <div class="product-card__actions">
-          <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button button--primary product-card__button" type="button" data-product="Космический десант">Заказать</button>
-        </div>
-      </article>
-      <article class="product-card">
+      <article class="product-card product-card--contraband">
         <span class="product-card__badge product-card__badge--hit">Хит</span>
         <div class="product-card__image">Изображение скина</div>
-        <p class="product-card__category">Наборы</p>
-        <h3 class="product-card__title"><a href="product.html">Набор «Стартовый»</a></h3>
-        <p class="product-card__description">Три скина разных типов по выгодной цене.</p>
-        <p class="product-card__price">2 490 ₽</p>
+        <p class="product-card__category">Винтовка</p>
+        <h3 class="product-card__title"><a href="product.html">M4A4 | Howl</a></h3>
+        <p class="product-card__meta">Контрабанда · износ 0.00–0.40</p>
+        <p class="product-card__description">Контрабандный скин с пылающей волчьей головой: убран из выпадения.</p>
+        <p class="product-card__price">14 990 ₽</p>
         <div class="product-card__actions">
           <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button button--primary product-card__button" type="button" data-product="Набор «Стартовый»">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="M4A4 | Howl">Заказать</button>
         </div>
       </article>
-      <article class="product-card">
+      <article class="product-card product-card--covert">
         <div class="product-card__image">Изображение скина</div>
-        <p class="product-card__category">Скины ножей</p>
-        <h3 class="product-card__title"><a href="product.html">Золотой клинок</a></h3>
-        <p class="product-card__description">Нож с золотым покрытием и гравировкой на лезвии.</p>
+        <p class="product-card__category">Пистолет</p>
+        <h3 class="product-card__title"><a href="product.html">USP-S | Kill Confirmed</a></h3>
+        <p class="product-card__meta">Тайное · износ 0.00–1.00</p>
+        <p class="product-card__description">Тёмный скин с изображением черепа.</p>
+        <p class="product-card__price">1 990 ₽</p>
+        <div class="product-card__actions">
+          <a class="button button--secondary" href="product.html">Подробнее</a>
+          <button class="button button--primary product-card__button" type="button" data-product="USP-S | Kill Confirmed">Заказать</button>
+        </div>
+      </article>
+      <article class="product-card product-card--restricted">
+        <div class="product-card__image">Изображение скина</div>
+        <p class="product-card__category">Пистолет</p>
+        <h3 class="product-card__title"><a href="product.html">Desert Eagle | Blaze</a></h3>
+        <p class="product-card__meta">Запрещённое · износ 0.00–0.08</p>
+        <p class="product-card__description">Градиент от жёлтого к красному — «пламя» на корпусе.</p>
         <p class="product-card__price">3 490 ₽</p>
         <div class="product-card__actions">
           <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button button--primary product-card__button" type="button" data-product="Золотой клинок">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="Desert Eagle | Blaze">Заказать</button>
         </div>
       </article>
+      <article class="product-card product-card--restricted">
+        <span class="product-card__badge product-card__badge--new">Новинка</span>
+        <div class="product-card__image">Изображение скина</div>
+        <p class="product-card__category">Пистолет</p>
+        <h3 class="product-card__title"><a href="product.html">Glock-18 | Fade</a></h3>
+        <p class="product-card__meta">Запрещённое · износ 0.00–0.08</p>
+        <p class="product-card__description">Радужный градиент от жёлтого к розовому и фиолетовому.</p>
+        <p class="product-card__price">4 990 ₽</p>
+        <div class="product-card__actions">
+          <a class="button button--secondary" href="product.html">Подробнее</a>
+          <button class="button button--primary product-card__button" type="button" data-product="Glock-18 | Fade">Заказать</button>
+        </div>
+      </article>
+      <article class="product-card product-card--covert">
+        <div class="product-card__image">Изображение скина</div>
+        <p class="product-card__category">Нож</p>
+        <h3 class="product-card__title"><a href="product.html">★ Karambit | Doppler</a></h3>
+        <p class="product-card__meta">Тайное · износ 0.00–0.08</p>
+        <p class="product-card__description">Керамбит с переливающимся узором; есть фазы Phase 1–4, Ruby, Sapphire, Black Pearl.</p>
+        <p class="product-card__price">24 990 ₽</p>
+        <div class="product-card__actions">
+          <a class="button button--secondary" href="product.html">Подробнее</a>
+          <button class="button button--primary product-card__button" type="button" data-product="★ Karambit | Doppler">Заказать</button>
+        </div>
+      </article>
+      <article class="product-card product-card--covert">
+        <div class="product-card__image">Изображение скина</div>
+        <p class="product-card__category">Снайперская винтовка</p>
+        <h3 class="product-card__title"><a href="product.html">AWP | Dragon Lore</a></h3>
+        <p class="product-card__meta">Тайное · износ 0.00–0.70</p>
+        <p class="product-card__description">Золотой дракон, обвивающий ствол снайперской винтовки.</p>
+        <p class="product-card__price">39 990 ₽</p>
+        <div class="product-card__actions">
+          <a class="button button--secondary" href="product.html">Подробнее</a>
+          <button class="button button--primary product-card__button" type="button" data-product="AWP | Dragon Lore">Заказать</button>
+        </div>
+      </article>
+
         </div>
       </section>
     </div>
@@ -230,7 +285,7 @@
     </form>
   </dialog>
 
-  <p class="success-message" id="success-message" hidden>Форма успешно отправлена!</p>
+  <p class="success-message" id="success-message" role="status" hidden>Заявка отправлена!</p>
 </body>
 
 </html>
