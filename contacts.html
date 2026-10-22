@@ -17,14 +17,14 @@
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li><a class="site-nav__link" href="index.html">Главная</a></li>
-          <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-          <li><a class="site-nav__link" href="product.html">Товар</a></li>
-          <li><a class="site-nav__link" href="order.html">Заявка</a></li>
-          <li><a class="site-nav__link site-nav__link--active" aria-current="page" href="contacts.html">Контакты</a></li>
-          <li><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
-          <li><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-          <li><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" aria-current="page" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
     </div>
@@ -32,13 +32,13 @@
 
   <main>
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="index.html">Главная</a>
-      <span>Контакты</span>
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current">Контакты</span>
     </nav>
 
     <h1 class="section__title">Контакты</h1>
 
-    <div class="layout">
+    <div class="page-layout">
       <section>
         <h2>Обратная связь</h2>
         <form class="order-form" id="feedback-form" action="#" method="post" novalidate data-success="feedback-success">
@@ -57,7 +57,7 @@
       </div>
       <div class="order-form__field">
         <label class="order-form__label" for="feedback-topic">Тема заявки</label>
-        <select class="order-form__input" id="feedback-topic" name="topic" required>
+        <select class="order-form__select" id="feedback-topic" name="topic" required>
           <option value="">Выберите тему</option>
           <option value="order">Покупка скина</option>
           <option value="question">Вопрос по товару</option>
@@ -66,15 +66,15 @@
       </div>
       <div class="order-form__field">
         <label class="order-form__label" for="feedback-comment">Сообщение</label>
-        <textarea class="order-form__input" id="feedback-comment" name="comment" rows="4" placeholder="Напишите, что нужно уточнить"></textarea>
+        <textarea class="order-form__textarea" id="feedback-comment" name="comment" rows="4" placeholder="Напишите, что нужно уточнить"></textarea>
       </div>
       <div class="order-form__field order-form__field--checkbox">
         <input class="order-form__checkbox" id="feedback-agreement" name="agreement" type="checkbox" required>
-        <label class="order-form__label" for="feedback-agreement">Я согласен на обработку персональных данных</label>
+        <label class="order-form__label order-form__label--inline" for="feedback-agreement">Я согласен на обработку персональных данных</label>
       </div>
 
           <div class="order-form__actions">
-            <button class="button" type="submit">Отправить сообщение</button>
+            <button class="button button--primary" type="submit">Отправить сообщение</button>
           </div>
         </form>
 
@@ -119,7 +119,7 @@
     <p class="site-footer__copy">&copy; 2026 SkinShop. Учебный проект.</p>
   </footer>
 
-  <a class="button top-button" href="#top">↑ Наверх</a>
+  <a class="button button--primary top-button" href="#top">↑ Наверх</a>
 </body>
 
 </html>

@@ -17,14 +17,14 @@
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li><a class="site-nav__link site-nav__link--active" aria-current="page" href="index.html">Главная</a></li>
-          <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-          <li><a class="site-nav__link" href="product.html">Товар</a></li>
-          <li><a class="site-nav__link" href="order.html">Заявка</a></li>
-          <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-          <li><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
-          <li><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-          <li><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" aria-current="page" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
     </div>
@@ -33,9 +33,9 @@
   <main>
     <section class="hero">
       <h1 class="hero__title">Магазин игровых скинов</h1>
-      <p>Скины для оружия, персонажей и ножей. Выберите товар в каталоге и оставьте заявку — мы передадим скин в ваш инвентарь.</p>
+      <p class="hero__text">Скины для оружия, персонажей и ножей. Выберите товар в каталоге и оставьте заявку — мы передадим скин в ваш инвентарь.</p>
       <div class="hero__actions">
-        <a class="button" href="catalog.html">Открыть каталог</a>
+        <a class="button button--primary" href="catalog.html">Открыть каталог</a>
         <a class="button button--secondary" href="#popular">Популярные товары</a>
       </div>
     </section>
@@ -61,7 +61,7 @@
     <section class="section" id="popular">
       <h2 class="section__title">Популярные товары</h2>
       <div class="products-grid">
-      <article class="product-card">
+      <article class="product-card product-card--featured">
         <span class="product-card__badge product-card__badge--hit">Хит</span>
         <div class="product-card__image">Изображение скина</div>
         <p class="product-card__category">Скины оружия</p>
@@ -70,7 +70,7 @@
         <p class="product-card__price">1 490 ₽</p>
         <div class="product-card__actions">
           <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button product-card__button" type="button" data-product="Огненный дракон">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="Огненный дракон">Заказать</button>
         </div>
       </article>
       <article class="product-card product-card--discount">
@@ -82,7 +82,7 @@
         <p class="product-card__price">990 ₽ <span class="product-card__old-price"><s>1 290 ₽</s></span></p>
         <div class="product-card__actions">
           <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button product-card__button" type="button" data-product="Ледяной шторм">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="Ледяной шторм">Заказать</button>
         </div>
       </article>
       <article class="product-card">
@@ -94,7 +94,7 @@
         <p class="product-card__price">2 490 ₽</p>
         <div class="product-card__actions">
           <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button product-card__button" type="button" data-product="Набор «Стартовый»">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="Набор «Стартовый»">Заказать</button>
         </div>
       </article>
       </div>
@@ -132,7 +132,7 @@
     <p class="site-footer__copy">&copy; 2026 SkinShop. Учебный проект.</p>
   </footer>
 
-  <a class="button top-button" href="#top">↑ Наверх</a>
+  <a class="button button--primary top-button" href="#top">↑ Наверх</a>
 
   <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
     <h2 class="order-dialog__title" id="order-dialog-title">Быстрая заявка</h2>
@@ -155,7 +155,7 @@
       </div>
       <div class="order-form__field">
         <label class="order-form__label" for="modal-topic">Тема заявки</label>
-        <select class="order-form__input" id="modal-topic" name="topic" required>
+        <select class="order-form__select" id="modal-topic" name="topic" required>
           <option value="">Выберите тему</option>
           <option value="order">Покупка скина</option>
           <option value="question">Вопрос по товару</option>
@@ -164,16 +164,16 @@
       </div>
       <div class="order-form__field">
         <label class="order-form__label" for="modal-comment">Комментарий</label>
-        <textarea class="order-form__input" id="modal-comment" name="comment" rows="4" placeholder="Напишите, что нужно уточнить"></textarea>
+        <textarea class="order-form__textarea" id="modal-comment" name="comment" rows="4" placeholder="Напишите, что нужно уточнить"></textarea>
       </div>
       <div class="order-form__field order-form__field--checkbox">
         <input class="order-form__checkbox" id="modal-agreement" name="agreement" type="checkbox" required>
-        <label class="order-form__label" for="modal-agreement">Я согласен на обработку персональных данных</label>
+        <label class="order-form__label order-form__label--inline" for="modal-agreement">Я согласен на обработку персональных данных</label>
       </div>
 
       <div class="order-form__actions">
         <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
-        <button class="button" type="submit">Отправить заявку</button>
+        <button class="button button--primary" type="submit">Отправить заявку</button>
       </div>
     </form>
   </dialog>
