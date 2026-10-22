@@ -17,14 +17,14 @@
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li><a class="site-nav__link" href="index.html">Главная</a></li>
-          <li><a class="site-nav__link site-nav__link--active" aria-current="page" href="catalog.html">Каталог</a></li>
-          <li><a class="site-nav__link" href="product.html">Товар</a></li>
-          <li><a class="site-nav__link" href="order.html">Заявка</a></li>
-          <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-          <li><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
-          <li><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-          <li><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" aria-current="page" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
     </div>
@@ -32,8 +32,8 @@
 
   <main>
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="index.html">Главная</a>
-      <span>Каталог</span>
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current">Каталог</span>
     </nav>
 
     <h1 class="section__title">Каталог скинов</h1>
@@ -43,47 +43,47 @@
         <h2 class="catalog-filters__title" id="filters-title">Фильтры</h2>
 
         <form class="filters-form" action="#" method="get">
-          <fieldset>
-            <legend>Категория</legend>
+          <fieldset class="filters-form__group">
+            <legend class="filters-form__legend">Категория</legend>
 
-            <label for="filter-weapons">
+            <label class="filters-form__label" for="filter-weapons">
               <input id="filter-weapons" type="checkbox" name="category" value="weapons" checked>
               Скины оружия
             </label>
 
-            <label for="filter-characters">
+            <label class="filters-form__label" for="filter-characters">
               <input id="filter-characters" type="checkbox" name="category" value="characters" checked>
               Скины персонажей
             </label>
 
-            <label for="filter-knives">
+            <label class="filters-form__label" for="filter-knives">
               <input id="filter-knives" type="checkbox" name="category" value="knives">
               Скины ножей
             </label>
 
-            <label for="filter-sets">
+            <label class="filters-form__label" for="filter-sets">
               <input id="filter-sets" type="checkbox" name="category" value="sets">
               Наборы
             </label>
           </fieldset>
 
-          <fieldset>
-            <legend>Цена, ₽</legend>
+          <fieldset class="filters-form__group">
+            <legend class="filters-form__legend">Цена, ₽</legend>
 
-            <label for="price-from">От</label>
-            <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
+            <label class="filters-form__label" for="price-from">От</label>
+            <input class="filters-form__input" id="price-from" name="price-from" type="number" min="0" placeholder="0">
 
-            <label for="price-to">До</label>
-            <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
+            <label class="filters-form__label" for="price-to">До</label>
+            <input class="filters-form__input" id="price-to" name="price-to" type="number" min="0" placeholder="5000">
           </fieldset>
 
-          <button class="button" type="submit" disabled>Применить</button>
+          <button class="button button--primary" type="submit" disabled>Применить</button>
         </form>
       </aside>
 
       <section class="catalog-products" aria-label="Список товаров">
-        <div class="products-grid">
-      <article class="product-card">
+        <div class="products-grid products-grid--catalog">
+      <article class="product-card product-card--featured">
         <span class="product-card__badge product-card__badge--hit">Хит</span>
         <div class="product-card__image">Изображение скина</div>
         <p class="product-card__category">Скины оружия</p>
@@ -92,7 +92,7 @@
         <p class="product-card__price">1 490 ₽</p>
         <div class="product-card__actions">
           <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button product-card__button" type="button" data-product="Огненный дракон">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="Огненный дракон">Заказать</button>
         </div>
       </article>
       <article class="product-card product-card--discount">
@@ -104,7 +104,7 @@
         <p class="product-card__price">990 ₽ <span class="product-card__old-price"><s>1 290 ₽</s></span></p>
         <div class="product-card__actions">
           <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button product-card__button" type="button" data-product="Ледяной шторм">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="Ледяной шторм">Заказать</button>
         </div>
       </article>
       <article class="product-card">
@@ -116,7 +116,7 @@
         <p class="product-card__price">2 190 ₽</p>
         <div class="product-card__actions">
           <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button product-card__button" type="button" data-product="Ночной охотник">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="Ночной охотник">Заказать</button>
         </div>
       </article>
       <article class="product-card">
@@ -127,7 +127,7 @@
         <p class="product-card__price">1 790 ₽</p>
         <div class="product-card__actions">
           <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button product-card__button" type="button" data-product="Космический десант">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="Космический десант">Заказать</button>
         </div>
       </article>
       <article class="product-card">
@@ -139,7 +139,7 @@
         <p class="product-card__price">2 490 ₽</p>
         <div class="product-card__actions">
           <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button product-card__button" type="button" data-product="Набор «Стартовый»">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="Набор «Стартовый»">Заказать</button>
         </div>
       </article>
       <article class="product-card">
@@ -150,7 +150,7 @@
         <p class="product-card__price">3 490 ₽</p>
         <div class="product-card__actions">
           <a class="button button--secondary" href="product.html">Подробнее</a>
-          <button class="button product-card__button" type="button" data-product="Золотой клинок">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="Золотой клинок">Заказать</button>
         </div>
       </article>
         </div>
@@ -184,7 +184,7 @@
     <p class="site-footer__copy">&copy; 2026 SkinShop. Учебный проект.</p>
   </footer>
 
-  <a class="button top-button" href="#top">↑ Наверх</a>
+  <a class="button button--primary top-button" href="#top">↑ Наверх</a>
 
   <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
     <h2 class="order-dialog__title" id="order-dialog-title">Быстрая заявка</h2>
@@ -207,7 +207,7 @@
       </div>
       <div class="order-form__field">
         <label class="order-form__label" for="modal-topic">Тема заявки</label>
-        <select class="order-form__input" id="modal-topic" name="topic" required>
+        <select class="order-form__select" id="modal-topic" name="topic" required>
           <option value="">Выберите тему</option>
           <option value="order">Покупка скина</option>
           <option value="question">Вопрос по товару</option>
@@ -216,16 +216,16 @@
       </div>
       <div class="order-form__field">
         <label class="order-form__label" for="modal-comment">Комментарий</label>
-        <textarea class="order-form__input" id="modal-comment" name="comment" rows="4" placeholder="Напишите, что нужно уточнить"></textarea>
+        <textarea class="order-form__textarea" id="modal-comment" name="comment" rows="4" placeholder="Напишите, что нужно уточнить"></textarea>
       </div>
       <div class="order-form__field order-form__field--checkbox">
         <input class="order-form__checkbox" id="modal-agreement" name="agreement" type="checkbox" required>
-        <label class="order-form__label" for="modal-agreement">Я согласен на обработку персональных данных</label>
+        <label class="order-form__label order-form__label--inline" for="modal-agreement">Я согласен на обработку персональных данных</label>
       </div>
 
       <div class="order-form__actions">
         <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
-        <button class="button" type="submit">Отправить заявку</button>
+        <button class="button button--primary" type="submit">Отправить заявку</button>
       </div>
     </form>
   </dialog>

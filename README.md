@@ -86,6 +86,26 @@ kr1-html-css-shop/
 - CSS Grid для сетки карточек (`.products-grid`);
 - CSS Grid для страницы каталога с фильтрами и списком товаров (`.catalog-layout`, области `filters` и `products`).
 
+## БЭМ-структура проекта
+
+В проекте используются следующие БЭМ-блоки:
+
+- `site-header` — шапка сайта;
+- `site-nav` — основная навигация (`site-nav__list`, `site-nav__item`, `site-nav__link`, модификатор `site-nav__link--active`);
+- `breadcrumbs` — хлебные крошки (`breadcrumbs__link`, `breadcrumbs__current`);
+- `hero` — первый экран главной страницы;
+- `products-grid` — сетка товаров (модификатор `products-grid--catalog`);
+- `product-card` — карточка товара (модификаторы `product-card--featured`, `product-card--discount`);
+- `catalog-layout` — структура страницы каталога;
+- `catalog-filters` и `filters-form` — фильтры каталога;
+- `order-dialog` — модальное окно заявки;
+- `order-form` — форма заявки (`order-form__field`, `order-form__label`, `order-form__input`, `order-form__select`, `order-form__textarea`);
+- `button` — кнопка (модификаторы `button--primary`, `button--secondary`);
+- `data-table` — таблицы;
+- `site-footer` — подвал сайта.
+
+Стилизация выполняется только по классам: id используются для якорей и JavaScript, inline-стилей нет.
+
 ## История выполнения
 
 - Практическая работа 1: создан Git-репозиторий, опубликован проект на GitHub Pages.
@@ -94,6 +114,7 @@ kr1-html-css-shop/
 - Практическая работа 4: добавлены CSS-переменные, состояния интерфейса и упорядочена структура стилей.
 - Практическая работа 5: создана многостраничная структура сайта, добавлены единая навигация, якорные ссылки и хлебные крошки.
 - Практическая работа 6: добавлены Flexbox-навигация и Grid-раскладка карточек и каталога.
+- Практическая работа 7: выполнен рефакторинг CSS-стилей по методологии БЭМ.
 - Контрольная работа 1: разработан многостраничный сайт из пяти страниц.
 
 ## Автор

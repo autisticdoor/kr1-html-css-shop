@@ -17,14 +17,14 @@
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li><a class="site-nav__link" href="index.html">Главная</a></li>
-          <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-          <li><a class="site-nav__link site-nav__link--active" aria-current="page" href="product.html">Товар</a></li>
-          <li><a class="site-nav__link" href="order.html">Заявка</a></li>
-          <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-          <li><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
-          <li><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-          <li><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" aria-current="page" href="product.html">Товар</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
     </div>
@@ -32,9 +32,9 @@
 
   <main>
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="index.html">Главная</a>
-      <a href="catalog.html">Каталог</a>
-      <span>Огненный дракон</span>
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current">Огненный дракон</span>
     </nav>
 
     <article class="product">
@@ -45,23 +45,23 @@
         <h1 class="product__title">Огненный дракон</h1>
         <p>Анимированный скин для винтовки: ствол и приклад покрыты узором из чешуи, а при стрельбе появляется эффект пламени.</p>
         <p class="product__price">1 490 ₽</p>
-        <a class="button" href="order.html">Оставить заявку</a>
+        <a class="button button--primary" href="order.html">Оставить заявку</a>
       </div>
     </article>
 
-    <div class="layout">
+    <div class="page-layout">
       <section class="section" id="specs">
         <h2 class="section__title">Характеристики</h2>
         <table class="data-table">
           <caption class="data-table__caption">Характеристики скина «Огненный дракон»</caption>
           <thead>
-            <tr><th scope="col">Параметр</th><th scope="col">Значение</th></tr>
+            <tr><th class="data-table__head-cell" scope="col">Параметр</th><th class="data-table__head-cell" scope="col">Значение</th></tr>
           </thead>
           <tbody>
-            <tr><th scope="row">Тип</th><td>Скин оружия (винтовка)</td></tr>
-            <tr><th scope="row">Редкость</th><td>Легендарный</td></tr>
-            <tr><th scope="row">Эффекты</th><td>Анимация пламени</td></tr>
-            <tr><th scope="row">Выдача</th><td>В инвентарь, до 15 минут</td></tr>
+            <tr class="data-table__row"><th class="data-table__row-head" scope="row">Тип</th><td class="data-table__cell">Скин оружия (винтовка)</td></tr>
+            <tr class="data-table__row"><th class="data-table__row-head" scope="row">Редкость</th><td class="data-table__cell">Легендарный</td></tr>
+            <tr class="data-table__row"><th class="data-table__row-head" scope="row">Эффекты</th><td class="data-table__cell">Анимация пламени</td></tr>
+            <tr class="data-table__row"><th class="data-table__row-head" scope="row">Выдача</th><td class="data-table__cell">В инвентарь, до 15 минут</td></tr>
           </tbody>
         </table>
       </section>
@@ -77,12 +77,12 @@
       <table class="data-table">
         <caption class="data-table__caption">Версии скина «Огненный дракон»</caption>
         <thead>
-          <tr><th scope="col">Версия</th><th scope="col">Эффекты</th><th scope="col">Цена</th></tr>
+          <tr><th class="data-table__head-cell" scope="col">Версия</th><th class="data-table__head-cell" scope="col">Эффекты</th><th class="data-table__head-cell" scope="col">Цена</th></tr>
         </thead>
         <tbody>
-          <tr><th scope="row">Обычная</th><td>Базовая раскраска</td><td>990 ₽</td></tr>
-          <tr><th scope="row">Улучшенная</th><td>Раскраска и анимация</td><td>1 490 ₽</td></tr>
-          <tr><th scope="row">Коллекционная</th><td>Анимация, звук и значок</td><td>2 490 ₽</td></tr>
+          <tr class="data-table__row"><th class="data-table__row-head" scope="row">Обычная</th><td class="data-table__cell">Базовая раскраска</td><td class="data-table__cell">990 ₽</td></tr>
+          <tr class="data-table__row"><th class="data-table__row-head" scope="row">Улучшенная</th><td class="data-table__cell">Раскраска и анимация</td><td class="data-table__cell">1 490 ₽</td></tr>
+          <tr class="data-table__row"><th class="data-table__row-head" scope="row">Коллекционная</th><td class="data-table__cell">Анимация, звук и значок</td><td class="data-table__cell">2 490 ₽</td></tr>
         </tbody>
       </table>
     </section>
@@ -114,7 +114,7 @@
     <p class="site-footer__copy">&copy; 2026 SkinShop. Учебный проект.</p>
   </footer>
 
-  <a class="button top-button" href="#top">↑ Наверх</a>
+  <a class="button button--primary top-button" href="#top">↑ Наверх</a>
 </body>
 
 </html>
